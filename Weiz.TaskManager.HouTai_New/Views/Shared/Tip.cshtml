@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Tip";
+}
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>米兰港后台管理系统</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="" />
+    @Styles.Render("~/css/matrix-style.css")
+    <script src="~/JS/jquery-1.9.0.js?v=@ConfigHelper.JsVersion"></script>
+    <script src="~/JS/Menu/tip.js?v=@ConfigHelper.JsVersion"></script>
+</head>
+<body>
+    <div class="tip_box">
+        <span class="right_tip">操作成功！</span>
+        <a href="#">系统会在<span id="secondArea">3</span>秒后自动返回列表页！</a>
+    </div>
+</body>
+</html>
