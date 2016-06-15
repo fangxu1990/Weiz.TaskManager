@@ -7,13 +7,16 @@
                     url: "/Task/UpdateStatus",
                     type: "POST",
                     dateType: "JSON",
-                    data: { status: status, taskId: taskId },
+                    data: { taskId: taskId, status: status },
                     success: function (data) {
                         if (data.result) {
                             art.dialog({
                                 icon: 'succeed',
                                 title: 'Tips',
                                 content: '操作成功',
+                                close: function () {
+                                    window.location.reload();
+                                }
                             });
                         }
                         else {
@@ -80,7 +83,6 @@
                               {
                                   name: '保 存',
                                   callback: function () {
-
                                       grid.Save("edit");
                                       return false;
                                   },
@@ -100,7 +102,7 @@
                 if (!grid.Require()) {
                     return false;
                 }
-
+                var taskID = $("#TaskID").val();
                 var taskName = $("#TaskName").val();
                 var taskParam = $("#TaskParam").val();
                 var assemblyName = $("#AssemblyName").val();
@@ -110,6 +112,7 @@
                 var status = $("input[type='Status']:checked").val();
 
                 var json = {
+                    TaskID: taskID,
                     TaskName: taskName,
                     TaskParam: taskParam,
                     AssemblyName: assemblyName,
@@ -130,7 +133,12 @@
                                 icon: 'succeed',
                                 title: 'Tips',
                                 content: '保存成功',
+                                close: function () {
+                                    this.hide();
+                                    window.location.reload();
+                                }
                             });
+
                         }
                         else {
                             art.dialog({

@@ -53,7 +53,7 @@ namespace Weiz.TaskManager.HouTai_New.Controllers
 
                 if (result)
                 {
-                    QuartzHelper.ScheduleJob(taskmodel, true);
+                    // QuartzHelper.ScheduleJob(taskmodel, true);
                 }
 
                 return Json(new { result = result });
