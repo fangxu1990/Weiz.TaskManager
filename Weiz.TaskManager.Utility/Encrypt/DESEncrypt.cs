@@ -33,7 +33,7 @@ namespace Weiz.TaskManager.Utility
             DESCryptoServiceProvider des = new DESCryptoServiceProvider();
             byte[] inputByteArray;
             inputByteArray = Encoding.Default.GetBytes(Text);
-            byte[] bKey = ASCIIEncoding.ASCII.GetBytes(Md5Hash(sKey).Substring(0, 8));
+            byte[] bKey = ASCIIEncoding.ASCII.GetBytes(Md5Hash.GetMD5Hash(sKey).Substring(0, 8));
             des.Key = bKey;
             des.IV = bKey;
             System.IO.MemoryStream ms = new System.IO.MemoryStream();
@@ -81,7 +81,7 @@ namespace Weiz.TaskManager.Utility
                 i = Convert.ToInt32(Text.Substring(x * 2, 2), 16);
                 inputByteArray[x] = (byte)i;
             }
-            byte[] bKey = ASCIIEncoding.ASCII.GetBytes(Md5Hash(sKey).Substring(0, 8));
+            byte[] bKey = ASCIIEncoding.ASCII.GetBytes(Md5Hash.GetMD5Hash(sKey).Substring(0, 8));
             des.Key = bKey;
             des.IV = bKey;
             System.IO.MemoryStream ms = new System.IO.MemoryStream();
@@ -92,24 +92,5 @@ namespace Weiz.TaskManager.Utility
         }
 
         #endregion
-
-        //// <summary>
-        /// 取得MD5加密串
-        /// </summary>
-        /// <param name="input">源明文字符串</param>
-        /// <returns>密文字符串</returns>
-        public static string Md5Hash(string input)
-        {
-            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
-            byte[] bs = Encoding.UTF8.GetBytes(input);
-            bs = md5.ComputeHash(bs);
-            StringBuilder s = new StringBuilder();
-            foreach (byte b in bs)
-            {
-                s.Append(b.ToString("x2").ToUpper());
-            }
-            string password = s.ToString();
-            return password;
-        }
     }
 }

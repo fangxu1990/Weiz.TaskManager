@@ -33,5 +33,17 @@ namespace Weiz.TaskManager.DAL
                 Items = DataMapHelper.DataSetToList<UserModel>(ds)
             };
         }
+
+        public UserModel GetUserModel(string userName, string pwd)
+        {
+            var sql = @"  select UserId,UserName,PassWord,TrueName,UserEmail,PhoneNum,IsAdmin,Status,CreateTime,LastLoginTime
+                          from  p_User
+                          where UserName=@UserName and PassWord = @PassWord";
+
+            object param = new { UserName = userName, PassWord = pwd };
+
+            return SQLHelper.Single<UserModel>(sql, param);
+           
+        }
     }
 }

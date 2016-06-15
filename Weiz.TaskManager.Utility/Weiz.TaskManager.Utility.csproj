@@ -70,7 +70,9 @@
     </Compile>
     <Compile Include="DB\SQLHelper.cs" />
     <Compile Include="Encrypt\DESEncrypt.cs" />
+    <Compile Include="Encrypt\Md5Hash.cs" />
     <Compile Include="File\FileHelper.cs" />
+    <Compile Include="JsonHelper.cs" />
     <Compile Include="Log\LogHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -7,7 +7,9 @@ using System.Net.Sockets;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using Weiz.TaskManager.BLL;
 using Weiz.TaskManager.Models;
+using Weiz.TaskManager.Utility;
 
 namespace Weiz.TaskManager.HouTai_New.Controllers
 {
@@ -42,7 +44,7 @@ namespace Weiz.TaskManager.HouTai_New.Controllers
                     return new RedirectToRouteResult(new System.Web.Routing.RouteValueDictionary
                (new { Controller = "Account", action = "Login", errorInfo = error }));
                 }
-              
+
             }
             else
             {
@@ -55,14 +57,17 @@ namespace Weiz.TaskManager.HouTai_New.Controllers
         private bool CheckUserInfo(string userName, string pwd, out string error)
         {
             error = string.Empty;
-            if (userName == "admin" && pwd == "test123")
+
+            UserBLL userBll = new UserBLL();
+            var users = userBll.GetUserModel(userName, Md5Hash.GetMd5String(pwd));
+            if (users == null)
             {
-                return true;
+                error = "用户名或密码错误";
+                return false;
             }
             else
             {
-                error = "用户名密码错误";
-                return false;
+                return true;
             }
         }
 

@@ -15,5 +15,10 @@ namespace Weiz.TaskManager.BLL
         {
             return dal.GetUserList(pageNo, pageSize);
         }
+
+        public UserModel GetUserModel(string userName, string pwd)
+        {
+            return dal.GetUserModel(userName, pwd);
+        }
     }
 }

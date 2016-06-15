@@ -1,3 +1,4 @@
+E:\vs2012\TaskManager-master\Weiz.TaskManager.DAL\obj\Debug\Weiz.TaskManager.DAL.csprojResolveAssemblyReference.cache
 E:\vs2012\TaskManager-master\Weiz.TaskManager.DAL\bin\Debug\log4net.config
 E:\vs2012\TaskManager-master\Weiz.TaskManager.DAL\bin\Debug\Weiz.TaskManager.DAL.dll
 E:\vs2012\TaskManager-master\Weiz.TaskManager.DAL\bin\Debug\Weiz.TaskManager.DAL.pdb
@@ -7,6 +8,7 @@ E:\vs2012\TaskManager-master\Weiz.TaskManager.DAL\bin\Debug\log4net.dll
 E:\vs2012\TaskManager-master\Weiz.TaskManager.DAL\bin\Debug\Weiz.TaskManager.Models.pdb
 E:\vs2012\TaskManager-master\Weiz.TaskManager.DAL\bin\Debug\Weiz.TaskManager.Utility.pdb
 E:\vs2012\TaskManager-master\Weiz.TaskManager.DAL\bin\Debug\log4net.xml
-E:\vs2012\TaskManager-master\Weiz.TaskManager.DAL\obj\Debug\Weiz.TaskManager.DAL.csprojResolveAssemblyReference.cache
 E:\vs2012\TaskManager-master\Weiz.TaskManager.DAL\obj\Debug\Weiz.TaskManager.DAL.dll
 E:\vs2012\TaskManager-master\Weiz.TaskManager.DAL\obj\Debug\Weiz.TaskManager.DAL.pdb
+E:\vs2012\TaskManager-master\Weiz.TaskManager.DAL\bin\Debug\Newtonsoft.Json.dll
+E:\vs2012\TaskManager-master\Weiz.TaskManager.DAL\bin\Debug\Newtonsoft.Json.xml

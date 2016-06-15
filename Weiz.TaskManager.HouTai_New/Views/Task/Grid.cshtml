@@ -4,10 +4,10 @@
 <div class="breadclip">
     <i class="homeIcon inline"></i><a href="#">首页</a><a href="#">任务管理</a>任务管理
 </div>
-<div class="pd20">
+<div class="pd20" id="content">
     <div class="sub_title mg_t20">
         <div class="inline f_l">任务列表</div>
-        <a href="javascript:void(0)" class="btncom btn_bg2 w100 inline f_r" style="color: white; margin-right: 20px;">添加</a>
+        <a href="javascript:void(0)" class="btncom btn_bg2 w100 inline f_r add"  style="color: white; margin-right: 20px;">添加</a>
     </div>
     <div class="list_tablebox mg_t10">
         <table cellpadding="0" cellspacing="1" border="0">
@@ -37,14 +37,14 @@
                     <td>@item.CreatedTime</td>
                     <td>@item.Remark</td>
                     <td>
-                        <a href="javascript:void(0)">编辑</a>&nbsp; 
+                        <a href="javascript:void(0)" class="edit" data-id="@item.TaskID">编辑</a>&nbsp; 
                         @if (item.Status == TaskStatus.RUN)
                         {
-                            <a href="javascript:void(0)" onclick="UpdateTaskStatus('@item.TaskID',0)">停止</a>
+                            <a href="javascript:void(0)" class="updatestatus" data-id="@item.TaskID" data-status="0">停止</a>
                         }
                         else
                         {
-                            <a href="javascript:void(0)" onclick="UpdateTaskStatus('@item.TaskID',1)">运行</a>
+                            <a href="javascript:void(0)" class="updatestatus" data-id="@item.TaskID" data-status="0">运行</a>
                         }
                     </td>
                 </tr>
@@ -67,24 +67,5 @@
         }
     </div>
 </div>
-<script src="~/Content/Scripts/artCommon.js"></script>
-<script>
 
-    function UpdateTaskStatus(taskId, status) {
-
-        $.ajax({
-            url: "/Task/UpdateTaskStatus",
-            type: "POST",
-            dateType: "JSON",
-            data: { status: status, taskId: taskId },
-            success: function (data) {
-                if (data.result) {
-                    artDialog.alert("操作成功");
-                }
-                else {
-                    artDialog.alert("操作失败");
-                }
-            }
-        });
-    }
-</script>
+<script src="~/Content/Scripts/Grid.js"></script>

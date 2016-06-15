@@ -82,5 +82,64 @@ namespace Weiz.TaskManager.DAL
 
             return SQLHelper.ExecuteNonQuery(sql, param) > 0;
         }
+
+        public TaskModel GetTaskById(string taskId)
+        {
+            var sql = @"SELECT TaskID,TaskName,TaskParam,CronExpressionString,AssemblyName,ClassName,Status,IsDelete,CreatedTime,ModifyTime,RecentRunTime,NextFireTime,CronRemark,Remark
+	                    FROM p_Task(nolock)
+                        WHERE TaskID=@TaskID";
+
+            object param = new { TaskID = taskId };
+            var result = SQLHelper.Single<TaskModel>(sql, param);
+
+            return result;
+        }
+
+        public bool Add(TaskModel task)
+        {
+            var sql = @" INSERT INTO p_Task
+                               (TaskID,TaskName,TaskParam,CronExpressionString,AssemblyName,ClassName,Status,IsDelete,CreatedTime,ModifyTime,CronRemark,Remark)
+                         VALUES
+                               (@TaskID ,@TaskName,@TaskParam,@CronExpressionString,@AssemblyName,@ClassName,@Status,0,getdate(),getdate(),@CronRemark,@Remark)";
+
+            object param = new
+            {
+                TaskID = task.TaskID,
+                TaskName = task.TaskName,
+                TaskParam = task.TaskParam,
+                CronExpressionString = task.CronExpressionString,
+                AssemblyName = task.AssemblyName,
+                ClassName = task.ClassName,
+                Status = task.Status,
+                CronRemark = task.CronRemark,
+                Remark = task.Remark
+            };
+
+            return SQLHelper.ExecuteNonQuery(sql, param) > 0;
+        }
+
+        public bool Edit(TaskModel task)
+        {
+
+            var sql = @" UPDATE p_Task
+                           SET TaskName = @TaskName,TaskParam = @TaskParam,CronExpressionString = @CronExpressionString,AssemblyName = @AssemblyName,ClassName = @ClassName,
+                               Status = @Status,IsDelete = 0,ModifyTime =getdate() ,CronRemark = @CronRemark,Remark = @Remark
+                         WHERE TaskID = @TaskID";
+
+            object param = new
+            {
+                TaskID = task.TaskID,
+                TaskName = task.TaskName,
+                TaskParam = task.TaskParam,
+                CronExpressionString = task.CronExpressionString,
+                AssemblyName = task.AssemblyName,
+                ClassName = task.ClassName,
+                Status = task.Status,
+                CronRemark = task.CronRemark,
+                Remark = task.Remark
+            };
+
+            return SQLHelper.ExecuteNonQuery(sql, param) > 0;
+        }
     }
 }

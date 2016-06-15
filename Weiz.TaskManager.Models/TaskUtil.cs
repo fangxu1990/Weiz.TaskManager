@@ -73,7 +73,6 @@ namespace Weiz.TaskManager.Models
         /// 任务备注
         /// </summary>
         public string Remark { get; set; }
-
     }
 
     /// <summary>

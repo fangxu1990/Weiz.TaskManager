@@ -144,7 +144,7 @@
     <Content Include="Content\Images\test1.png" />
     <Content Include="Content\Images\tip_icon.png" />
     <Content Include="Content\Images\upfile_img.png" />
-    <Content Include="Content\Scripts\artDialog.js" />
+    <Content Include="Content\Scripts\artDialog\artDialog.js" />
     <Content Include="Content\Scripts\artDialog\artDialog.source.js" />
     <Content Include="Content\Scripts\artDialog\plugins\iframeTools.js" />
     <Content Include="Content\Scripts\artDialog\plugins\iframeTools.source.js" />
@@ -290,6 +290,7 @@
     <Content Include="Content\Scripts\artDialog\_doc\upd.txt" />
     <Content Include="Content\Scripts\jquery-1.7.1.js" />
     <Content Include="Content\Scripts\My97DatePicker\calendar.js" />
+    <Content Include="Content\Scripts\Grid.js" />
     <Content Include="Content\Scripts\My97DatePicker\lang\en.js" />
     <Content Include="Content\Scripts\My97DatePicker\lang\zh-cn.js" />
     <Content Include="Content\Scripts\My97DatePicker\lang\zh-tw.js" />
@@ -313,7 +314,6 @@
     <Content Include="Content\Scripts\My97DatePicker\开发包\skin\whyGreen\datepicker.css" />
     <Content Include="Content\Scripts\My97DatePicker\开发包\skin\whyGreen\img.gif" />
     <Content Include="Content\Scripts\cron-expression.js" />
-    <Content Include="Content\Scripts\artCommon.js" />
     <Content Include="cron.html" />
     <Content Include="demo.html" />
     <Content Include="Content\Images\logo.png" />
@@ -351,16 +351,16 @@
     <Content Include="Views\Home\Test.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\SideBarMenu.cshtml" />
-    <Content Include="Views\Shared\Tip.cshtml" />
     <Content Include="Views\Shared\UserNav.cshtml" />
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Cron\Index.cshtml" />
-    <Content Include="Views\Task\Edit.cshtml" />
+    <Content Include="Views\Task\_Edit.cshtml" />
     <Content Include="Views\Task\Grid.cshtml" />
     <Content Include="Config\Config.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Log\RunLog.cshtml" />
     <Content Include="Views\Log\ErrorLog.cshtml" />

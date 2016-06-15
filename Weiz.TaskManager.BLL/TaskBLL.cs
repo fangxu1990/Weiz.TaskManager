@@ -46,5 +46,20 @@ namespace Weiz.TaskManager.BLL
         {
             return dal.UpdateRecentRunTime(taskId, recentRunTime);
         }
+
+        public TaskModel GetTaskById(string taskId)
+        {
+            return dal.GetTaskById(taskId);
+        }
+
+        public bool Add(TaskModel task)
+        {
+            return dal.Add(task);
+        }
+
+        public bool Edit(TaskModel task)
+        {
+            return dal.Edit(task);
+        }
     }
 }
